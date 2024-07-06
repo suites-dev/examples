@@ -5,6 +5,4 @@ import { UserRepository } from './user.repository';
 @Module({
   providers: [UserService, UserRepository],
 })
-export class UserModule {
-
-}
+export class UserModule {}
