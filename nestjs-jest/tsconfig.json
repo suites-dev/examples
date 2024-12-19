@@ -1,11 +1,16 @@
 {
+  "extends": "../tsconfig.json",
   "compilerOptions": {
-    "target": "es2020",
-    "types": ["node", "jest"],
-    "module": "commonjs",
-    "noEmit": true,
-    "experimentalDecorators": true,
-    "emitDecoratorMetadata": true,
-    "moduleResolution": "node"
-  }
+    "rootDir": "src",
+    "typeRoots": [
+      "./node_modules/@types"
+    ],
+    "types": [
+      "node",
+      "jest"
+    ]
+  },
+  "include": [
+    "src/**/*.spec.ts"
+  ]
 }
