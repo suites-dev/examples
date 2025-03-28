@@ -1,5 +1,4 @@
-import { TestBed } from '@suites/unit';
-import type { Mocked } from '@suites/unit';
+import { type Mocked, TestBed } from '@suites/unit';
 import { UserService } from './user.service';
 import { UserRepository } from './user.repository';
 

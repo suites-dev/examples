@@ -2,15 +2,13 @@
   "extends": "../tsconfig.json",
   "compilerOptions": {
     "rootDir": "src",
-    "typeRoots": [
-      "./node_modules/@types"
-    ],
     "types": [
       "node",
       "jest"
     ]
   },
   "include": [
-    "src/**/*.spec.ts"
+    "src/**/*.spec.ts",
+    "global.d.ts"
   ]
 }
