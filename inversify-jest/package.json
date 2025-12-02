@@ -4,7 +4,7 @@
   "private": true,
   "description": "Suites InversifyJS + Jest Example",
   "scripts": {
-    "test": "jest"
+    "test": "tsc --noEmit && jest"
   },
   "dependencies": {
     "inversify": "^6.0.3",

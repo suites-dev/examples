@@ -5,7 +5,7 @@
   "type": "module",
   "description": "Suites InversifyJS + Vitest Example",
   "scripts": {
-    "test": "vitest run"
+    "test": "tsc --noEmit && vitest run"
   },
   "dependencies": {
     "inversify": "^6.0.3",

@@ -5,7 +5,7 @@
   "type": "module",
   "description": "Suites NestJS + Vitest Example",
   "scripts": {
-    "test": "vitest run"
+    "test": "tsc --noEmit && vitest run"
   },
   "dependencies": {
     "@nestjs/common": "^10.4.15",

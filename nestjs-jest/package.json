@@ -4,7 +4,7 @@
   "private": true,
   "description": "Suites NestJS + Jest Example",
   "scripts": {
-    "test": "jest"
+    "test": "tsc --noEmit && jest"
   },
   "dependencies": {
     "@nestjs/common": "^10.4.15",
