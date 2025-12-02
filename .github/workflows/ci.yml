@@ -23,7 +23,6 @@ jobs:
           - nestjs-sinon
           - nestjs-vitest
         node-version:
-          - '16'
           - '18'
           - '20'
           - '22'
