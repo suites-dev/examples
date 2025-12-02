@@ -1,0 +1,67 @@
+name: Continuous Integration
+
+on:
+  push:
+    branches: master
+  pull_request:
+    branches: master
+
+jobs:
+  test:
+    name: Test ${{ matrix.example }} (Node ${{ matrix.node-version }})
+    runs-on: ubuntu-latest
+    timeout-minutes: 10
+
+    strategy:
+      fail-fast: false
+      matrix:
+        example:
+          - inversify-jest
+          - inversify-sinon
+          - inversify-vitest
+          - nestjs-jest
+          - nestjs-sinon
+          - nestjs-vitest
+        node-version:
+          - '16'
+          - '18'
+          - '20'
+          - '22'
+
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@v4
+
+      - name: Setup pnpm
+        uses: pnpm/action-setup@v2
+        with:
+          version: 9.15.4
+
+      - name: Setup Node.js
+        uses: actions/setup-node@v4
+        with:
+          node-version: ${{ matrix.node-version }}
+          cache: 'pnpm'
+          cache-dependency-path: ${{ matrix.example }}/pnpm-lock.yaml
+
+      - name: Cache node_modules
+        uses: actions/cache@v4
+        with:
+          path: ${{ matrix.example }}/node_modules
+          key: modules-${{ runner.os }}-node${{ matrix.node-version }}-${{ matrix.example }}-${{ hashFiles(format('{0}/pnpm-lock.yaml', matrix.example)) }}
+          restore-keys: |
+            modules-${{ runner.os }}-node${{ matrix.node-version }}-${{ matrix.example }}-
+
+      - name: Install dependencies
+        working-directory: ${{ matrix.example }}
+        run: pnpm install --frozen-lockfile
+
+      - name: Run tests
+        working-directory: ${{ matrix.example }}
+        run: pnpm test
+
+      - name: Report results
+        if: always()
+        run: |
+          echo "### ${{ matrix.example }} (Node ${{ matrix.node-version }})" >> $GITHUB_STEP_SUMMARY
+          echo "Status: ${{ job.status }}" >> $GITHUB_STEP_SUMMARY

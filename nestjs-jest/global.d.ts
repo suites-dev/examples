@@ -1,1 +1,2 @@
-/// <reference types="@suites/doubles.jest/unit.d.ts" />
+/// <reference types="@suites/doubles.jest/unit" />
+

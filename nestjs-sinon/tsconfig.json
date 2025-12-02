@@ -15,5 +15,11 @@
   "include": [
     "src/**/*.ts",
     "global.d.ts"
-  ]
+  ],
+  "ts-node": {
+    "transpileOnly": true,
+    "compilerOptions": {
+      "module": "commonjs"
+    }
+  }
 }

@@ -1,0 +1,31 @@
+{
+  "name": "inversify-sinon-example",
+  "version": "0.0.0",
+  "private": true,
+  "description": "Suites InversifyJS + Sinon Example",
+  "scripts": {
+    "test": "tsc --noEmit && ts-mocha src/**/*.spec.ts"
+  },
+  "dependencies": {
+    "inversify": "^6.0.3",
+    "reflect-metadata": "^0.2.2"
+  },
+  "devDependencies": {
+    "@suites/di.inversify": "^3.0.1",
+    "@suites/doubles.sinon": "^3.0.1",
+    "@suites/unit": "^3.0.1",
+    "@types/chai": "^5.0.1",
+    "@types/chai-as-promised": "^7.1.8",
+    "@types/mocha": "^10.0.10",
+    "@types/node": "^22.10.2",
+    "@types/sinon": "^17.0.3",
+    "chai": "^4.5.0",
+    "chai-as-promised": "^7.1.1",
+    "mocha": "^10.8.2",
+    "sinon": "^19.0.2",
+    "ts-mocha": "^11.1.0",
+    "ts-node": "^10.9.2",
+    "typescript": "^5.7.2"
+  },
+  "packageManager": "pnpm@9.15.4+sha512.b2dc20e2fc72b3e18848459b37359a32064663e5627a51e4c74b2c29dd8e8e0491483c3abb40789cfd578bf362fb6ba8261b05f0387d76792ed6e23ea3b1b6a0"
+}

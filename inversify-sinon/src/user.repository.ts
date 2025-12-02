@@ -1,9 +1,9 @@
-import { Injectable, Inject } from '@nestjs/common';
+import { injectable, inject } from 'inversify';
 import { Database, User, DATABASE_TOKEN } from './types';
 
-@Injectable()
+@injectable()
 export class UserRepository {
-  constructor(@Inject(DATABASE_TOKEN) private database: Database) {}
+  constructor(@inject(DATABASE_TOKEN) private database: Database) {}
 
   async create(user: User): Promise<User> {
     return this.database.save(user);

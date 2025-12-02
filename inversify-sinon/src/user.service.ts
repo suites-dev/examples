@@ -1,13 +1,13 @@
-import { Injectable } from '@nestjs/common';
+import { injectable, inject } from 'inversify';
 import { UserRepository } from './user.repository';
 import { UserValidator } from './user.validator';
 import { CreateUserDto, User } from './types';
 
-@Injectable()
+@injectable()
 export class UserService {
   constructor(
-    private repository: UserRepository,
-    private validator: UserValidator
+    @inject(UserRepository) private repository: UserRepository,
+    @inject(UserValidator) private validator: UserValidator
   ) {}
 
   async createUser(dto: CreateUserDto): Promise<User> {
