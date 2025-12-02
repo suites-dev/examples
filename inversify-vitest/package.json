@@ -2,6 +2,7 @@
   "name": "inversify-vitest-example",
   "version": "0.0.0",
   "private": true,
+  "type": "module",
   "description": "Suites InversifyJS + Vitest Example",
   "scripts": {
     "test": "vitest run"

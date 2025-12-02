@@ -7,5 +7,5 @@ export default defineConfig({
     root: './',
     include: ['src/**/*.spec.ts']
   },
-  plugins: [swc.vite({ module: { type: 'nodenext' } })]
+  plugins: [swc.vite({ module: { type: 'es6' } })]
 });
