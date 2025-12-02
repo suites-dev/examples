@@ -1,6 +1,6 @@
-import { type Mocked, TestBed } from '@suites/unit';
-import { UserService } from './user.service';
+import { Mocked, TestBed } from '@suites/unit';
 import { UserRepository } from './user.repository';
+import { UserService } from './user.service';
 import { UserValidator } from './user.validator';
 
 describe('UserService - Solitary Tests', () => {

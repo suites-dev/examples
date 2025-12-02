@@ -1,8 +1,8 @@
-import { type Mocked, TestBed } from '@suites/unit';
+import { Mocked, TestBed } from '@suites/unit';
+import { Database, DATABASE_TOKEN } from './types';
+import { UserRepository } from './user.repository';
 import { UserService } from './user.service';
 import { UserValidator } from './user.validator';
-import { UserRepository } from './user.repository';
-import { Database, DATABASE_TOKEN } from './types';
 
 describe('UserService - Sociable Tests', () => {
   let userService: UserService;
@@ -20,7 +20,7 @@ describe('UserService - Sociable Tests', () => {
 
   it('should validate and create user with real validation logic', async () => {
     database.findByEmail.mockResolvedValue(null);
-    database.save.mockImplementation(async (user) => user);
+    database.save.mockImplementation(async (user: any) => user);
 
     const result = await userService.createUser({
       email: 'valid@example.com',
