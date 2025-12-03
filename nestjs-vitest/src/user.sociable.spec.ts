@@ -15,7 +15,7 @@ describe('User Service Unit Spec (Sociable Tests)', () => {
       .compile();
 
     userService = unit;
-    database = unitRef.get(DATABASE_TOKEN);
+    database = unitRef.get<Database>(DATABASE_TOKEN);
   });
 
   it('should validate and create user with real validation logic', async () => {
