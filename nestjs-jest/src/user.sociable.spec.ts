@@ -4,7 +4,7 @@ import { UserValidator } from './user.validator';
 import { UserRepository } from './user.repository';
 import { Database, DATABASE_TOKEN } from './types';
 
-describe('UserService - Sociable Tests', () => {
+describe('User Service Unit Spec (Sociable Tests)', () => {
   let userService: UserService;
   let database: Mocked<Database>;
 

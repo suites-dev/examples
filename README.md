@@ -102,6 +102,13 @@ Both strategies are unit tests - they keep external I/O mocked and remain fast. 
 
 All examples implement the same user management service with three key components:
 
+```mermaid
+graph LR
+    UserService --> UserValidator
+    UserService --> UserRepository
+    UserRepository --> DATABASE_TOKEN
+```
+
 - **UserService** - Business logic layer with validation and persistence
 - **UserValidator** - Email validation (no dependencies)
 - **UserRepository** - Data access layer (depends on database token)

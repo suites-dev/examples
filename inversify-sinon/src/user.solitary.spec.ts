@@ -12,7 +12,7 @@ import chaiAsPromised from 'chai-as-promised';
 
 chai.use(chaiAsPromised);
 
-describe('UserService - Solitary Tests', () => {
+describe('User Service Unit Spec (Solitary Tests)', () => {
   let userService: UserService;
   let repository: Mocked<UserRepository>;
   let validator: Mocked<UserValidator>;

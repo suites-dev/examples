@@ -13,7 +13,7 @@ import chaiAsPromised from 'chai-as-promised';
 
 chai.use(chaiAsPromised);
 
-describe('UserService - Sociable Tests', () => {
+describe('User Service Unit Spec (Sociable Tests)', () => {
   let userService: UserService;
   let database: Mocked<Database>;
 

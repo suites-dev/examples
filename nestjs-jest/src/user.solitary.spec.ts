@@ -3,7 +3,7 @@ import { UserService } from './user.service';
 import { UserRepository } from './user.repository';
 import { UserValidator } from './user.validator';
 
-describe('UserService - Solitary Tests', () => {
+describe('User Service Unit Spec (Solitary Tests)', () => {
   let userService: UserService;
   let repository: Mocked<UserRepository>;
   let validator: Mocked<UserValidator>;
