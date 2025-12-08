@@ -1,8 +1,8 @@
 import { type Mocked, TestBed } from '@suites/unit';
-import { UserService } from './user.service';
-import { UserValidator } from './user.validator';
-import { UserRepository } from './user.repository';
-import { Database, DATABASE_TOKEN } from './types';
+import { UserService } from '../src/user.service';
+import { UserValidator } from '../src/user.validator';
+import { UserRepository } from '../src/user.repository';
+import { Database, DATABASE_TOKEN } from '../src/types';
 
 describe('User Service Unit Spec (Sociable Tests)', () => {
   let userService: UserService;
@@ -51,3 +51,4 @@ describe('User Service Unit Spec (Sociable Tests)', () => {
     ).rejects.toThrow('Name must be at least 2 characters');
   });
 });
+

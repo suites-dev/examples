@@ -34,14 +34,22 @@ All tests should pass, demonstrating both solitary and sociable testing strategi
 
 ## Project Structure
 
+**`src/`** - Application code being tested:
+
 ```
 src/
-├── types.ts                    # User types and interfaces
-├── user.validator.ts           # Validation logic (no dependencies)
-├── user.repository.ts          # Data access (token injection)
-├── user.service.ts             # Business logic (class injections)
-├── user.solitary.spec.ts       # Solitary unit tests
-└── user.sociable.spec.ts       # Sociable unit tests
+├── types.ts              # User types and interfaces
+├── user.validator.ts     # Validation logic (no dependencies)
+├── user.repository.ts    # Data access (token injection)
+└── user.service.ts       # Business logic (class injections)
+```
+
+**`tests/`** - Tests demonstrating Suites usage:
+
+```
+tests/
+├── user.solitary.spec.ts # Solitary unit tests (all dependencies mocked)
+└── user.sociable.spec.ts # Sociable unit tests (real collaborators)
 ```
 
 ## Key Patterns

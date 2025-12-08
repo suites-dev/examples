@@ -27,14 +27,22 @@ All tests should pass, demonstrating both testing strategies with advanced mock 
 
 ## Project Structure
 
+**`src/`** - Application code being tested:
+
 ```
 src/
-├── types.ts                    # User types and interfaces
-├── user.validator.ts           # Validation logic (no dependencies)
-├── user.repository.ts          # Data access (token injection)
-├── user.service.ts             # Business logic (class injections)
-├── user.solitary.spec.ts       # Solitary unit tests with mock config
-└── user.sociable.spec.ts       # Sociable unit tests with mock config
+├── types.ts              # User types and interfaces
+├── user.validator.ts     # Validation logic (no dependencies)
+├── user.repository.ts    # Data access (token injection)
+└── user.service.ts       # Business logic (class injections)
+```
+
+**`tests/`** - Tests demonstrating Suites advanced mock configuration:
+
+```
+tests/
+├── user.solitary.spec.ts # Solitary tests with .mock().final() and .mock().impl()
+└── user.sociable.spec.ts # Sociable tests with .mock().final() and .mock().impl()
 ```
 
 ## Mock Configuration Patterns

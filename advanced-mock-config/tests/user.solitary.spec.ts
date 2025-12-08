@@ -6,10 +6,10 @@
  */
 
 import { type Mocked, TestBed } from "@suites/unit";
-import { UserService } from "./user.service";
-import { UserRepository } from "./user.repository";
-import { UserValidator } from "./user.validator";
-import { UserValidationResult } from "./types";
+import { UserService } from "../src/user.service";
+import { UserRepository } from "../src/user.repository";
+import { UserValidator } from "../src/user.validator";
+import { UserValidationResult } from "../src/types";
 
 describe("User Service Unit Spec (Solitary Tests)", () => {
   /**
@@ -158,3 +158,4 @@ describe("User Service Unit Spec (Solitary Tests)", () => {
  * - Full call inspection available
  * - Use for: flexible defaults with per-test overrides
  */
+

@@ -105,14 +105,19 @@ examples/
 └── advanced-mock-config/ # Advanced .mock().final() and .impl() patterns
 ```
 
-Each example contains:
+Each example contains two directories:
 
-- `src/types.ts` - Domain types
-- `src/user.service.ts` - Business logic
-- `src/user.validator.ts` - Validation logic
-- `src/user.repository.ts` - Data access
-- `src/user.solitary.spec.ts` - Solitary unit tests
-- `src/user.sociable.spec.ts` - Sociable unit tests
+**`src/`** - Application code being tested:
+
+- `types.ts` - Domain types and interfaces
+- `user.service.ts` - Business logic layer
+- `user.validator.ts` - Validation logic
+- `user.repository.ts` - Data access layer
+
+**`tests/`** - Tests demonstrating Suites usage:
+
+- `user.solitary.spec.ts` - Solitary unit tests (all dependencies mocked)
+- `user.sociable.spec.ts` - Sociable unit tests (real collaborators, external I/O mocked)
 
 ## Prerequisites
 

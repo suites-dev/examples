@@ -1,7 +1,7 @@
-import { Mocked, TestBed } from '@suites/unit';
-import { UserRepository } from './user.repository';
-import { UserService } from './user.service';
-import { UserValidator } from './user.validator';
+import { type Mocked, TestBed } from '@suites/unit';
+import { UserService } from '../src/user.service';
+import { UserRepository } from '../src/user.repository';
+import { UserValidator } from '../src/user.validator';
 
 describe('User Service Unit Spec (Solitary Tests)', () => {
   let userService: UserService;
@@ -59,3 +59,4 @@ describe('User Service Unit Spec (Solitary Tests)', () => {
     ).rejects.toThrow('User with this email already exists');
   });
 });
+

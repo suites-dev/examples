@@ -4,7 +4,7 @@
   "private": true,
   "description": "Suites InversifyJS + Sinon Example",
   "scripts": {
-    "test": "tsc --noEmit && ts-mocha src/**/*.spec.ts"
+    "test": "tsc --noEmit && ts-mocha tests/**/*.spec.ts"
   },
   "dependencies": {
     "inversify": "^6.0.3",
