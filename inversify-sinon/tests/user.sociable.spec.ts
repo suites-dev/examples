@@ -1,14 +1,23 @@
-import { type Mocked, TestBed } from '@suites/unit';
-import { UserService } from './user.service';
-import { UserValidator } from './user.validator';
-import { UserRepository } from './user.repository';
-import { Database, DATABASE_TOKEN } from './types';
+import 'reflect-metadata';
+
+import type { Mocked } from '@suites/unit';
+import { TestBed } from '@suites/unit';
+import { UserService } from '../src/user.service';
+import { UserValidator } from '../src/user.validator';
+import { UserRepository } from '../src/user.repository';
+import { Database, DATABASE_TOKEN } from '../src/types';
+import { expect } from 'chai';
+import { before } from 'mocha';
+import * as chai from 'chai';
+import chaiAsPromised from 'chai-as-promised';
+
+chai.use(chaiAsPromised);
 
 describe('User Service Unit Spec (Sociable Tests)', () => {
   let userService: UserService;
   let database: Mocked<Database>;
 
-  beforeAll(async () => {
+  before(async () => {
     const { unit, unitRef } = await TestBed.sociable(UserService)
       .expose(UserValidator)
       .expose(UserRepository)
@@ -19,18 +28,17 @@ describe('User Service Unit Spec (Sociable Tests)', () => {
   });
 
   it('should validate and create user with real validation logic', async () => {
-    database.findByEmail.mockResolvedValue(null);
-    database.save.mockImplementation(async (user) => user);
+    database.findByEmail.resolves(null);
+    database.save.callsFake(async (user: any) => user);
 
     const result = await userService.createUser({
       email: 'valid@example.com',
       name: 'Valid User'
     });
 
-    expect(result.email).toBe('valid@example.com');
-    expect(result.name).toBe('Valid User');
-    expect(result.isActive).toBe(true);
-    expect(database.save).toHaveBeenCalled();
+    expect(result.email).to.equal('valid@example.com');
+    expect(result.name).to.equal('Valid User');
+    expect(result.isActive).to.equal(true);
   });
 
   it('should reject invalid email using real validator', async () => {
@@ -39,7 +47,7 @@ describe('User Service Unit Spec (Sociable Tests)', () => {
         email: 'invalid-email',
         name: 'Test'
       })
-    ).rejects.toThrow('Invalid email format');
+    ).to.be.rejectedWith('Invalid email format');
   });
 
   it('should reject short name using real validator', async () => {
@@ -48,6 +56,7 @@ describe('User Service Unit Spec (Sociable Tests)', () => {
         email: 'test@example.com',
         name: 'A'
       })
-    ).rejects.toThrow('Name must be at least 2 characters');
+    ).to.be.rejectedWith('Name must be at least 2 characters');
   });
 });
+

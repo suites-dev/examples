@@ -4,7 +4,7 @@
   "private": true,
   "description": "Suites NestJS + Sinon Example",
   "scripts": {
-    "test": "tsc --noEmit && ts-mocha src/**/*.spec.ts"
+    "test": "tsc --noEmit && ts-mocha tests/**/*.spec.ts"
   },
   "dependencies": {
     "@nestjs/common": "^10.4.15",
