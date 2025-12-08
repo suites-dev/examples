@@ -9,3 +9,4 @@ module.exports = {
     '!src/types.ts'
   ]
 };
+

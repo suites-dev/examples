@@ -18,3 +18,4 @@ export class UserRepository {
     return user !== null;
   }
 }
+

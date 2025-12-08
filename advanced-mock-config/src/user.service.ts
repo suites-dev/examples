@@ -1,7 +1,7 @@
-import { Injectable } from '@nestjs/common';
-import { UserRepository } from './user.repository';
-import { UserValidator } from './user.validator';
-import { CreateUserDto, User } from './types';
+import { Injectable } from "@nestjs/common";
+import { UserRepository } from "./user.repository";
+import { UserValidator } from "./user.validator";
+import { CreateUserDto, User } from "./types";
 
 @Injectable()
 export class UserService {
@@ -13,19 +13,19 @@ export class UserService {
   async createUser(dto: CreateUserDto): Promise<User> {
     const validation = this.validator.validate(dto);
     if (!validation.isValid) {
-      throw new Error(`Validation failed: ${validation.errors.join(', ')}`);
+      throw new Error(`Validation failed: ${validation.errors.join(", ")}`);
     }
 
     const exists = await this.repository.exists(dto.email);
     if (exists) {
-      throw new Error('User with this email already exists');
+      throw new Error("User with this email already exists");
     }
 
     const newUser: User = {
       id: Date.now(),
       email: dto.email,
       name: dto.name,
-      isActive: true
+      isActive: true,
     };
 
     return this.repository.create(newUser);
