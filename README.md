@@ -4,25 +4,28 @@ Real-world examples demonstrating [Suites](https://suites.dev) integration with 
 
 ## Examples
 
-| Example                                | DI Framework | Test Runner | Use When                                    |
-|----------------------------------------|--------------|-------------|---------------------------------------------|
-| [nestjs-jest](./nestjs-jest)           | NestJS       | Jest        | NestJS with Jest                            |
-| [nestjs-vitest](./nestjs-vitest)       | NestJS       | Vitest      | NestJS with Vitest                          |
-| [nestjs-sinon](./nestjs-sinon)         | NestJS       | Sinon       | NestJS with Sinon/Mocha                     |
-| [inversify-jest](./inversify-jest)     | InversifyJS  | Jest        | InversifyJS with Jest                       |
-| [inversify-vitest](./inversify-vitest) | InversifyJS  | Vitest      | InversifyJS with Vitest                     |
-| [inversify-sinon](./inversify-sinon)   | InversifyJS  | Sinon       | InversifyJS with Sinon/Mocha                |
+| Example                                        | DI Framework | Test Runner | Use When                                          |
+| ---------------------------------------------- | ------------ | ----------- | ------------------------------------------------- |
+| [nestjs-jest](./nestjs-jest)                   | NestJS       | Jest        | NestJS with Jest                                  |
+| [nestjs-vitest](./nestjs-vitest)               | NestJS       | Vitest      | NestJS with Vitest                                |
+| [nestjs-sinon](./nestjs-sinon)                 | NestJS       | Sinon       | NestJS with Sinon/Mocha                           |
+| [inversify-jest](./inversify-jest)             | InversifyJS  | Jest        | InversifyJS with Jest                             |
+| [inversify-vitest](./inversify-vitest)         | InversifyJS  | Vitest      | InversifyJS with Vitest                           |
+| [inversify-sinon](./inversify-sinon)           | InversifyJS  | Sinon       | InversifyJS with Sinon/Mocha                      |
+| [advanced-mock-config](./advanced-mock-config) | NestJS       | Jest        | Advanced `.mock().final()` and `.impl()` patterns |
 
 ## Choosing an Example
 
 ### By DI Framework
 
 **NestJS**
+
 - Full-featured framework with built-in modules
 - Includes HTTP, validation, configuration
 - Use for: Applications requiring framework features
 
 **InversifyJS**
+
 - Lightweight IoC container
 - Minimal abstractions
 - Use for: Applications requiring less framework overhead
@@ -30,15 +33,18 @@ Real-world examples demonstrating [Suites](https://suites.dev) integration with 
 ### By Test Runner
 
 **Jest**
+
 - Includes built-in assertions and mocking
 - Use for: Standard Jest-based projects
 
 **Vitest**
+
 - Faster test execution
 - Native ESM support
 - Use for: Projects requiring faster feedback
 
 **Sinon**
+
 - Works with any assertion library (Chai, Node assert, etc.)
 - Used with Mocha test runner
 - Use for: Projects with specific assertion library requirements
@@ -67,6 +73,7 @@ const { unit, unitRef } = await TestBed.solitary(UserService).compile();
 Test one class in complete isolation. All dependencies are replaced with test doubles.
 
 **When to use:**
+
 - Testing component logic in isolation
 - Controlling all inputs for predictable results
 
@@ -76,7 +83,7 @@ Test one class in complete isolation. All dependencies are replaced with test do
 
 ```typescript
 const { unit, unitRef } = await TestBed.sociable(UserService)
-  .expose(UserValidator)  // Use real validator
+  .expose(UserValidator) // Use real validator
   .expose(UserRepository) // Use real repository
   .compile();
 ```
@@ -84,6 +91,7 @@ const { unit, unitRef } = await TestBed.sociable(UserService)
 Test multiple classes together with their real collaborators. External I/O (databases, APIs, file systems) is replaced with test doubles to keep tests fast.
 
 **When to use:**
+
 - Verifying components work together correctly
 - Testing interactions between business logic components
 
@@ -124,10 +132,12 @@ examples/
 ├── nestjs-sinon/         # NestJS with Sinon
 ├── inversify-jest/       # InversifyJS with Jest
 ├── inversify-vitest/     # InversifyJS with Vitest
-└── inversify-sinon/      # InversifyJS with Sinon
+├── inversify-sinon/      # InversifyJS with Sinon
+└── advanced-mock-config/ # Advanced .mock().final() and .impl() patterns
 ```
 
 Each example contains:
+
 - `src/types.ts` - Domain types
 - `src/user.service.ts` - Business logic
 - `src/user.validator.ts` - Validation logic
@@ -153,6 +163,7 @@ Each example contains:
 ### "reflect-metadata" errors (InversifyJS examples)
 
 InversifyJS requires decorator metadata. Configuration is already set in `tsconfig.json` and imports. If errors occur, verify:
+
 - `experimentalDecorators: true` in tsconfig.json
 - `emitDecoratorMetadata: true` in tsconfig.json
 - `import 'reflect-metadata'` at top of test files
