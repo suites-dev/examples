@@ -1,6 +1,10 @@
 # Suites Examples
 
-Real-world examples demonstrating [Suites](https://suites.dev) integration with popular dependency injection frameworks and test runners. Each example showcases solitary and sociable testing patterns using the same user management domain model.
+Real-world examples demonstrating [Suites](https://suites.dev) integration with popular dependency injection frameworks and test runners.
+
+Each example showcases [solitary](https://suites.dev/docs/api-reference/testbed-solitary) and [sociable](https://suites.dev/docs/api-reference/testbed-sociable) testing patterns using the same user management domain model.
+
+If you are new to Suites, check out the [Getting Started](https://suites.dev/docs/getting-started) guide.
 
 ## Examples
 
@@ -13,41 +17,6 @@ Real-world examples demonstrating [Suites](https://suites.dev) integration with 
 | [inversify-vitest](./inversify-vitest)         | InversifyJS  | Vitest      | InversifyJS with Vitest                           |
 | [inversify-sinon](./inversify-sinon)           | InversifyJS  | Sinon       | InversifyJS with Sinon/Mocha                      |
 | [advanced-mock-config](./advanced-mock-config) | NestJS       | Jest        | Advanced `.mock().final()` and `.impl()` patterns |
-
-## Choosing an Example
-
-### By DI Framework
-
-**NestJS**
-
-- Full-featured framework with built-in modules
-- Includes HTTP, validation, configuration
-- Use for: Applications requiring framework features
-
-**InversifyJS**
-
-- Lightweight IoC container
-- Minimal abstractions
-- Use for: Applications requiring less framework overhead
-
-### By Test Runner
-
-**Jest**
-
-- Includes built-in assertions and mocking
-- Use for: Standard Jest-based projects
-
-**Vitest**
-
-- Faster test execution
-- Native ESM support
-- Use for: Projects requiring faster feedback
-
-**Sinon**
-
-- Works with any assertion library (Chai, Node assert, etc.)
-- Used with Mocha test runner
-- Use for: Projects with specific assertion library requirements
 
 ## Quick Start
 
