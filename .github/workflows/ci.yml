@@ -21,6 +21,10 @@ jobs:
           - inversify-sinon
           - inversify-vitest
           - nestjs-jest
+          - nestjs-jest-drizzle
+          - nestjs-jest-mikroorm
+          - nestjs-jest-prisma
+          - nestjs-jest-typeorm
           - nestjs-sinon
           - nestjs-vitest
         node-version:
