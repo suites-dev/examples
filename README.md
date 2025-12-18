@@ -11,6 +11,10 @@ If you are new to Suites, check out the [Getting Started](https://suites.dev/doc
 | Example                                        | DI Framework | Test Runner | Use When                                          |
 | ---------------------------------------------- | ------------ | ----------- | ------------------------------------------------- |
 | [nestjs-jest](./nestjs-jest)                   | NestJS       | Jest        | NestJS with Jest                                  |
+| [nestjs-jest-drizzle](./nestjs-jest-drizzle)   | NestJS       | Jest        | NestJS with Jest + Drizzle ORM                    |
+| [nestjs-jest-prisma](./nestjs-jest-prisma)     | NestJS       | Jest        | NestJS with Jest + Prisma ORM                     |
+| [nestjs-jest-typeorm](./nestjs-jest-typeorm)   | NestJS       | Jest        | NestJS with Jest + TypeORM                        |
+| [nestjs-jest-mikroorm](./nestjs-jest-mikroorm) | NestJS       | Jest        | NestJS with Jest + MikroORM                       |
 | [nestjs-vitest](./nestjs-vitest)               | NestJS       | Vitest      | NestJS with Vitest                                |
 | [nestjs-sinon](./nestjs-sinon)                 | NestJS       | Sinon       | NestJS with Sinon/Mocha                           |
 | [inversify-jest](./inversify-jest)             | InversifyJS  | Jest        | InversifyJS with Jest                             |
@@ -97,6 +101,10 @@ This consistent domain model makes it easy to compare different framework and te
 ```
 examples/
 ├── nestjs-jest/          # NestJS with Jest
+├── nestjs-jest-drizzle/  # NestJS with Jest + Drizzle ORM
+├── nestjs-jest-prisma/   # NestJS with Jest + Prisma ORM
+├── nestjs-jest-typeorm/  # NestJS with Jest + TypeORM
+├── nestjs-jest-mikroorm/ # NestJS with Jest + MikroORM
 ├── nestjs-vitest/        # NestJS with Vitest
 ├── nestjs-sinon/         # NestJS with Sinon
 ├── inversify-jest/       # InversifyJS with Jest
